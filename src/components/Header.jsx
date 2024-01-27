@@ -66,7 +66,7 @@ const Header = ({ setShowSideBar, showSideBar }) => {
           {format(selected, "PPP")}
         </p>
         {showDatePicker && (
-          <div className='absolute z-20 right-[-290%] sm:right-auto top-0  translate-y-10 bg-white dark:bg-transparent dark:custom-backdrop rounded-lg shadow-xl transition duration-200 ease-linear dark:text-white/80'>
+          <div className='absolute z-20 right-[-290%] sm:right-auto top-0  translate-y-10 bg-white dark:bg-black/80 dark:custom-backdrop rounded-lg shadow-xl transition duration-200 ease-linear dark:text-white/80'>
             <DayPicker
               mode='single'
               selected={selected}
