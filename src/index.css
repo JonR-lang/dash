@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .custom-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+      url("./assets/bg-image/bg-analytics.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .custom-shadow-dark {
+    box-shadow: 1px 1px 30px rgba(52, 202, 165, 0.2);
+  }
+
+  .custom-backdrop {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .custom-shadow {
+    box-shadow: 1px 1px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .loader {
+    position: relative;
+    width: 2.5em;
+    height: 2.5em;
+    transform: rotate(165deg);
+  }
+
+  .loader:before,
+  .loader:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 0.25em;
+    transform: translate(-50%, -50%);
+  }
+
+  .loader:before {
+    animation: before8 2s infinite;
+  }
+
+  .loader:after {
+    animation: after6 2s infinite;
+  }
+
+  @keyframes before8 {
+    0% {
+      width: 0.5em;
+      box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75),
+        -1em 0.5em rgba(111, 202, 220, 0.75);
+    }
+
+    35% {
+      width: 2.5em;
+      box-shadow: 0 -0.5em rgba(225, 20, 98, 0.75),
+        0 0.5em rgba(111, 202, 220, 0.75);
+    }
+
+    70% {
+      width: 0.5em;
+      box-shadow: -1em -0.5em rgba(225, 20, 98, 0.75),
+        1em 0.5em rgba(111, 202, 220, 0.75);
+    }
+
+    100% {
+      box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75),
+        -1em 0.5em rgba(111, 202, 220, 0.75);
+    }
+  }
+
+  @keyframes after6 {
+    0% {
+      height: 0.5em;
+      box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75),
+        -0.5em -1em rgba(233, 169, 32, 0.75);
+    }
+
+    35% {
+      height: 2.5em;
+      box-shadow: 0.5em 0 rgba(61, 184, 143, 0.75),
+        -0.5em 0 rgba(233, 169, 32, 0.75);
+    }
+
+    70% {
+      height: 0.5em;
+      box-shadow: 0.5em -1em rgba(61, 184, 143, 0.75),
+        -0.5em 1em rgba(233, 169, 32, 0.75);
+    }
+
+    100% {
+      box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75),
+        -0.5em -1em rgba(233, 169, 32, 0.75);
+    }
+  }
+
+  .loader {
+    position: absolute;
+    top: calc(50% - 1.25em);
+    left: calc(50% - 1.25em);
+  }
+
+  .grid-custom {
+    grid-template-columns: 1.3fr 1fr;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
