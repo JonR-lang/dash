@@ -21,6 +21,8 @@ I participated in the Geegpay Challenge. This project is designed to be highly r
 - ChartJs
 - Framer Motion
 - react-icons
+- date-fns
+- react-day-picker
 
 ## Background Image
 
