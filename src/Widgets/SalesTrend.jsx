@@ -29,7 +29,7 @@ const SalesTrend = () => {
   const [selectedValue, setSelectedValue] = useState("Weekly");
   const getChartData = async () => {
     try {
-      const response = await fetch("../src/data/sales.json");
+      const response = await fetch("/src/data/sales.json");
 
       const data = await response.json();
 
