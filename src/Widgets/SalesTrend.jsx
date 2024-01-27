@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import { Bar } from "react-chartjs-2";
 import Loader from "../components/Loader";
 import useDarkMode from "../utils/theme";
+import mySales from "../data/sales";
 
 const createLinearGradient = (color1, color2) => {
   const ctx = document.createElement("canvas").getContext("2d");
@@ -22,18 +23,13 @@ const createLinearGradient = (color1, color2) => {
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
 const SalesTrend = () => {
-  const { isDarkMode } = useDarkMode();
   const [chartData, setChartData] = useState([]);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [selectedValue, setSelectedValue] = useState("Weekly");
   const getChartData = async () => {
     try {
-      const response = await fetch("../src/data/sales.json");
-
-      const data = await response.json();
-
-      setChartData(data.sales);
+      setChartData(mySales.sales);
     } catch (error) {
       console.log(`Error: ${error.message}`);
       setError(error.message);

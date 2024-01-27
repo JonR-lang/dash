@@ -5,7 +5,7 @@ import { IoMdClose } from "react-icons/io";
 
 import { useEffect, useState } from "react";
 import LineChart from "../components/LineChart";
-import useDarkMode from "../utils/theme";
+import total from "../data/totals";
 
 const PerformanceWidget = () => {
   const [statistics, setStatistics] = useState(null);
@@ -13,12 +13,9 @@ const PerformanceWidget = () => {
   const [error, setError] = useState("");
   const [display, setDisplay] = useState(null);
 
-  const getStatistics = async () => {
+  const getStatistics = () => {
     try {
-      const response = await fetch("../src/data/totals.json");
-      const data = await response.json();
-
-      setStatistics(data);
+      setStatistics(total);
     } catch (err) {
       setError("An error occured!");
       console.log(err.message);

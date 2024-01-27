@@ -2,19 +2,16 @@ import { useState, useEffect } from "react";
 import Loader from "../components/Loader";
 import TableData from "../components/TableData";
 import DataList from "../components/DataList";
+import mySales from "../data/sales";
 
 const LastOrders = () => {
   const [dataTable, setDataTable] = useState([]);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
-  const getDataTable = async () => {
+  const getDataTable = () => {
     try {
-      const response = await fetch("../src/data/sales.json");
-
-      const data = await response.json();
-
-      setDataTable(data.invoices);
+      setDataTable(mySales.invoices);
     } catch (error) {
       console.log(`Error: ${error.message}`);
       setError(error.message);

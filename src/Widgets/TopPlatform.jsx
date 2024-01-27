@@ -1,16 +1,13 @@
 import { useEffect, useState } from "react";
 import StoreList from "../components/StoreList";
+import mySales from "../data/sales";
 
 const TopPlatform = () => {
   const [stores, setStores] = useState([]);
 
-  const getStores = async () => {
+  const getStores = () => {
     try {
-      const response = await fetch("../src/data/sales.json");
-
-      const data = await response.json();
-
-      setStores(data.stores);
+      setStores(mySales.stores);
     } catch (error) {
       console.log(`Error: ${error.message}`);
       setError(error.message);
