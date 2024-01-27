@@ -15,7 +15,7 @@ const PerformanceWidget = () => {
 
   const getStatistics = async () => {
     try {
-      const response = await fetch("../src/data/totals.json");
+      const response = await fetch("/data/totals.json");
       const data = await response.json();
 
       setStatistics(data);
