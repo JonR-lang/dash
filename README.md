@@ -32,4 +32,4 @@ The custom loader spinner used in this project was gotten from uiverse.com, and 
 
 ## Data Fetching
 
-Front-end development is about fetching data and presenting it in an appealing format. In this project, data was sourced from a JSON file, providing a foundation for dynamic content presentation.
+Front-end development is about fetching data and presenting it in an appealing format. In this project, data was sourced from a JSfile(to simulate a JSON), providing a foundation for dynamic content presentation. Also, I intentionally added a little delay to show my beautiful loader spinner component.
